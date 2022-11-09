@@ -95,24 +95,36 @@ p {
 .li-item:not(:last-child) {
   margin-right: 50px;
 }
-.nav-list {
-  font-weight: 500;
+
+.nav-link {
+  position: relative;
+  display: block;
+  padding: 32px 0;
+   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
   text-decoration: none;
 }
-.nav-list:hover,
-.nav-list:focus {
-  color: var(--accent-color-blue);
+
+.nav-link.current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-image: url(/images/line-current.svg);
+  
 }
 .current {
   color: var(--accent-color-blue);
 }
-.nav .nav-list {
-  display: block;
-  padding: 32px 0;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent-color-blue);
 }
 .header-icon-box {
   color: var(--primary-text-color);
