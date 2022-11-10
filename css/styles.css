@@ -111,7 +111,7 @@ p {
 
 .nav-link.current::after {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   content: '';
   height: 4px;
@@ -175,6 +175,7 @@ p {
   background-color: #c4c4c4;
   background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero.jpg);
+  background-repeat: no-repeat;
 }
 .hero {
   margin: 0 auto;
@@ -217,6 +218,61 @@ p {
 .button:focus {
   background-color: #188ce8;
   transition: background-color 250ms var(--timing-function);
+}
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--backgroud-color);
+
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
+}
+
+.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--backgroud-color);
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /* особливості */
 .features {
@@ -505,41 +561,25 @@ p {
   position: relative;
   overflow: hidden;
 }
-
-.box-overlay::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  transform: translateY(100%);
-  content: '';
-  display: block;
-  background-color: rgba(33, 150, 243, 0.9);
-}
-.box-overlay:hover::before {
-  opacity: 1;
-}
-.card-project:hover .box-overlay::before {
-  transform: translateY(0);
-  transition: transform 250ms var(--timing-function);
-}
-
 .hover-text {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  width: 100%;
+  height: 100%;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: var(--accent-color-white);
+  background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
-.card-project:hover .hover-text {
+.portfolio-link:hover .hover-text {
+  transform: translateY(0%);
   opacity: 1;
-  transition: opacity 250ms var(--timing-function);
 }
 .card-bottom {
   padding: 20px 24px;
