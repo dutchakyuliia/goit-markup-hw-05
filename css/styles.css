@@ -107,8 +107,12 @@ p {
   letter-spacing: 0.02em;
   color: var(--title-text-color);
   text-decoration: none;
+  transition: color 250ms var(--timing-function);
 }
-
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent-color-blue);
+}
 .nav-link.current::after {
   position: absolute;
   bottom: -1px;
@@ -121,11 +125,6 @@ p {
 }
 .current {
   color: var(--accent-color-blue);
-}
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--accent-color-blue);
-  transition: color 250ms var(--timing-function);
 }
 
 .header-icon {
@@ -152,13 +151,13 @@ p {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   text-decoration: none;
+  transition: color 250ms var(--timing-function);
 }
 .header-mail:hover,
 .header-mail:focus,
 .header-tel:hover,
 .header-tel:focus {
   color: var(--accent-color-blue);
-  transition: color 250ms var(--timing-function);
 }
 
 /*! main */
@@ -207,12 +206,12 @@ p {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: background-color 250ms var(--timing-function);
 }
 
 .button:hover,
 .button:focus {
   background-color: #188ce8;
-  transition: background-color 250ms var(--timing-function);
 }
 
 /* modal */
@@ -249,7 +248,7 @@ p {
   transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 
-.close-modal {
+.btn-close-modal {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -374,14 +373,14 @@ p {
   height: 44px;
   padding: 12px 0;
   text-align: center;
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-function),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-box:focus,
 .team-icon-box:hover {
   background-color: var(--accent-color-blue);
   color: var(--accent-color-white);
-  border-radius: 50%;
-  transition: background-color 250ms var(--timing-function),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon {
   fill: currentColor;
@@ -406,12 +405,12 @@ p {
   color: var(--icon-fill);
   border: 1px solid var(--icon-fill);
   border-radius: 4px;
+  transition: color 250ms var(--timing-function);
 }
 .clients-link:hover,
 .clients-link:focus {
   color: var(--accent-color-blue);
   border: 1px solid var(--accent-color-blue);
-  transition: color 250ms var(--timing-function);
 }
 .clients-icon {
   fill: currentColor;
@@ -487,11 +486,12 @@ p {
   border-radius: 50%;
   color: var(--accent-color-white);
   background: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms var(--timing-function);
 }
 .footer-icon-box:focus,
 .footer-icon-box:hover {
   background-color: var(--accent-color-blue);
-  transition: background-color 250ms var(--timing-function);
+  
 }
 .footer-icon {
   fill: currentColor;
@@ -521,6 +521,8 @@ p {
   border-radius: 4px;
   border: none;
   cursor: pointer;
+   transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 .button-portfolio:hover,
 .button-portfolio:focus {
@@ -528,10 +530,6 @@ p {
   background: var(--accent-color-blue);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  border: none;
-  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
 }
 /* приклади робіт */
 
@@ -545,12 +543,13 @@ p {
 .card-project {
   margin-left: 30px;
   margin-top: 30px;
+  transition: box-shadow 250ms var(--timing-function);
 }
 .card-project:hover,
 .card-projecr:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 250ms var(--timing-function);
+  
 }
 
 .box-overlay {
@@ -571,6 +570,9 @@ p {
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
   transform: translateY(100%);
+  transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
+}
+.portfolio-link {
   transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 .portfolio-link:hover .hover-text {
