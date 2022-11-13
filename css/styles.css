@@ -570,11 +570,15 @@ p {
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px;
   transform: translateY(100%);
-  transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
 .portfolio-link {
+  color: var(--primary-text-color);
+  text-decoration: none;
+}
+.portfolio-link .hover-text {
   transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 }
+
 .portfolio-link:hover .hover-text {
   transform: translateY(0%);
   opacity: 1;
@@ -599,7 +603,4 @@ p {
   font-size: 16px;
   line-height: 1.88;
 }
-.portfolio-link {
-  color: var(--primary-text-color);
-  text-decoration: none;
-}
+
